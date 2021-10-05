@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "converting file $1.md to $1.pdf"
+pandoc $1.md -f markdown -o $1.pdf
+echo "done."
