@@ -1,5 +1,8 @@
 #!/bin/bash
 
-echo "converting file $1.md to $1.pdf"
-pandoc $1.md -f markdown -o $1.pdf
+src=$1
+trgt=${1%.*}.pdf
+
+echo "converting file $src to $trgt"
+pandoc $1 -f markdown -o $trgt
 echo "done."
