@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "initialisiere Python workspace in $(pwd)"
+
+pipenv install ipykernel jupyter_ascending
+envpath=$(pipenv --venv)
+envname=${envpath##*/}
+expath=$(pipenv --py)
+
+${expath} -m ipykernel install --user --name=$envname
+
+source ${envpath}/bin/activate jupyter nbextension install --py --sys-prefix jupyter_ascending
+source ${envpath}/bin/activate jupyter nbextension     enable jupyter_ascending --sys-prefix --py
+source ${envpath}/bin/activate jupyter serverextension enable jupyter_ascending --sys-prefix --py
+
