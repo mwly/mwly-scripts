@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "opening vimwiki"
+
+nvim ~/vimwiki/index.wiki
+
+echo "thank you for using vimwiki"
+
